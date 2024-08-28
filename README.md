@@ -23,9 +23,16 @@ AZURE_CLIENT_SECRET={Your SP Secret}
 streamlit run app.py
 ```
 
-# Use your own tables. Sample data will not be provided with the repository. Couple of sample screen shots this app generates. 
+# Use your own tables. This fictitious sample data will not be provided with the repository. Couple of sample screen shots this app generates. **** These visualizations are generated with Made UP Data ****
 
-## Prompt Input
+## Prompt Sample Input 1:
+
+### Create a bar chart to render the average annual income by loan type
+
+### Output Visualition
+![visualization (1)](https://github.com/user-attachments/assets/31995175-536a-40ae-a6e2-ac14a8aad788)
+
+## Prompt Sample Input 2:
 
 ### Create a bar chart showing average credit score by Years of experience
 
