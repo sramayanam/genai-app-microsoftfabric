@@ -22,3 +22,13 @@ AZURE_CLIENT_SECRET={Your SP Secret}
 ```
 streamlit run app.py
 ```
+
+# Use your own tables. Sample data will not be provided with the repository. Couple of sample screen shots this app generates. 
+
+## Prompt Input
+
+### Create a bar chart showing average credit score by Years of experience
+
+### Output Visualization
+![visualization](https://github.com/user-attachments/assets/25bd849d-6c42-4e0b-9eff-ca24a176d48a)
+
