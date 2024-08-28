@@ -9,7 +9,6 @@ from langchain_core.prompts import (
     SystemMessagePromptTemplate,
 )
 
-
 class Prompt:
     def __init__(self, input):
         
@@ -56,7 +55,9 @@ class Prompt:
 
         self.system_prefix = self.systemprompt
         self.examples = self.queryexamples
-
+        '''
+        example_selector: An instance of SemanticSimilarityExampleSelector that selects examples based on semantic similarity.
+        '''
         self.example_selector = SemanticSimilarityExampleSelector.from_examples(
             self.examples,
             AzureOpenAIEmbeddings(model="text-embedding-3-large"),
@@ -65,6 +66,9 @@ class Prompt:
             input_keys=["input"],
         )
 
+        '''
+        few_shot_prompt: A FewShotPromptTemplate instance that generates a prompt for few-shot learning.
+        '''
         self.few_shot_prompt = FewShotPromptTemplate(
             example_selector=self.example_selector,
             example_prompt=PromptTemplate.from_template(
@@ -74,7 +78,10 @@ class Prompt:
             prefix=self.system_prefix,
             suffix="",
         )
-
+    
+        '''
+        An instance of ChatPromptTemplate that constructs the full prompt from a series of messages.
+        '''
         self.full_prompt = ChatPromptTemplate.from_messages(
             [
                 SystemMessagePromptTemplate(prompt=self.few_shot_prompt),
