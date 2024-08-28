@@ -2,7 +2,7 @@ from IPython.display import Markdown, display
 from langchain_openai import AzureChatOpenAI
 import os
 import streamlit as st
-from langchain.sql_database import SQLDatabase
+
 
 
 from dotenv import load_dotenv
