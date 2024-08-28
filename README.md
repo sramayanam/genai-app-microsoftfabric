@@ -1,4 +1,4 @@
-# sqlagentonfabric
+# LLM Agent on Microsoft Fabric
 
 This code generates a visual or table based on the user input
 The backend database is Microsoft Fabric SQL warehouse
