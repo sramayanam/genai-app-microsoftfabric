@@ -3,19 +3,6 @@
 This code generates a visual or table based on the user input
 The backend database is Microsoft Fabric SQL warehouse
 SQL Agent connects to Fabric based on the following contents from .env file
-Create an env file following the sample template below
-```
-sqlservername={Microst Fabric Warehouse GUID}.datawarehouse.fabric.microsoft.com
-sqlserverdatabase={Name of the Microsoft Fabric Warehouse}
-gpt4deploymentname={LLM Deployment name}
-azureopenaiapiversion={Deployment Version}
-azureopenaiendpoint={Azure Open AI EndPoint}
-azureopenaiapikey={Azure Open AI Key}
-armsubscriptionid={Your Subscription ID}
-azuretenantid={Your Azure Tenant ID}
-azureclientid={Your SP Client ID}
-azureclientsecret={Your SP Secret}
-```
 
 # Initialize and Run the Application
 
@@ -38,6 +25,23 @@ docker run -d -p 8501:8501 -e SQL_SERVER_NAME=${sqlservername} \
 ```
 
 ## Run locally
+
+
+### Create an env file following the sample template below
+```
+sqlservername={Microst Fabric Warehouse GUID}.datawarehouse.fabric.microsoft.com
+sqlserverdatabase={Name of the Microsoft Fabric Warehouse}
+gpt4deploymentname={LLM Deployment name}
+azureopenaiapiversion={Deployment Version}
+azureopenaiendpoint={Azure Open AI EndPoint}
+azureopenaiapikey={Azure Open AI Key}
+armsubscriptionid={Your Subscription ID}
+azuretenantid={Your Azure Tenant ID}
+azureclientid={Your SP Client ID}
+azureclientsecret={Your SP Secret}
+```
+
+### Command
 
 ```
 streamlit run app.py
