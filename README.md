@@ -5,19 +5,36 @@ The backend database is Microsoft Fabric SQL warehouse
 SQL Agent connects to Fabric based on the following contents from .env file
 Create an env file following the sample template below
 ```
-SQL_SERVER_NAME={Microst Fabric Warehouse GUID}.datawarehouse.fabric.microsoft.com
-SQL_SERVER_DATABASE={Name of the Microsoft Fabric Warehouse}
-GPT4_DEPLOYMENT_NAME={LLM Deployment name}
-AZURE_OPENAI_API_VERSION={Deployment Version}
-AZURE_OPENAI_ENDPOINT={Azure Open AI EndPoint}
-AZURE_OPENAI_API_KEY={Azure Open AI Key}
-ARM_SUBSCRIPTION_ID={Your Subscription ID}
-AZURE_TENANT_ID={Your Azure Tenant ID}
-AZURE_CLIENT_ID={Your SP Client ID}
-AZURE_CLIENT_SECRET={Your SP Secret}
+sqlservername={Microst Fabric Warehouse GUID}.datawarehouse.fabric.microsoft.com
+sqlserverdatabase={Name of the Microsoft Fabric Warehouse}
+gpt4deploymentname={LLM Deployment name}
+azureopenaiapiversion={Deployment Version}
+azureopenaiendpoint={Azure Open AI EndPoint}
+azureopenaiapikey={Azure Open AI Key}
+armsubscriptionid={Your Subscription ID}
+azuretenantid={Your Azure Tenant ID}
+azureclientid={Your SP Client ID}
+azureclientsecret={Your SP Secret}
 ```
 
 # Initialize and Run the Application
+
+## Use Docker
+
+docker run -d -p 8501:8501 -e SQL_SERVER_NAME=${sqlservername} \
+    -e SQL_SERVER_DATABASE=${sqlserverdatabase} \
+    -e GPT4_DEPLOYMENT_NAME=${gpt4deploymentname} \
+    -e AZURE_OPENAI_API_VERSION=${azureopenaiapiversion} \
+    -e AZURE_OPENAI_ENDPOINT=${azureopenaiendpoint} \
+    -e AZURE_OPENAI_API_KEY=${azureopenaiapikey} \
+    -e ARM_SUBSCRIPTION_ID=${armsubscriptionid} \
+    -e AZURE_TENANT_ID=${azuretenantid} \
+    -e AZURE_CLIENT_ID=${azureclientid} \
+    -e AZURE_CLIENT_SECRET=${azureclientsecret} \
+    -t genaiapp:latest
+
+
+## Run locally
 
 ```
 streamlit run app.py
