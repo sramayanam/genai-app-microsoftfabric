@@ -21,6 +21,9 @@ azureclientsecret={Your SP Secret}
 
 ## Use Docker
 
+```
+docker build -t genaiapp .
+
 docker run -d -p 8501:8501 -e SQL_SERVER_NAME=${sqlservername} \
     -e SQL_SERVER_DATABASE=${sqlserverdatabase} \
     -e GPT4_DEPLOYMENT_NAME=${gpt4deploymentname} \
@@ -32,7 +35,7 @@ docker run -d -p 8501:8501 -e SQL_SERVER_NAME=${sqlservername} \
     -e AZURE_CLIENT_ID=${azureclientid} \
     -e AZURE_CLIENT_SECRET=${azureclientsecret} \
     -t genaiapp:latest
-
+```
 
 ## Run locally
 
